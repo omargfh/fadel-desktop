@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splashscreen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #splashscreen {
+            background-color: #111;
+            background-image: url('/pattern.svg');
+            background-origin: padding-box;
+            background-position-x: 0%;
+            background-position-y: 0%;
+            background-repeat: repeat;
+            background-size: auto;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        @keyframes pulsing {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            20% {
+                opacity: 1;
+            }
+        }
+        .pulsing {
+            animation: pulsing 2s infinite;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="splashscreen">
+        <img src="fadel.svg" alt="Fadel" width="300" style="width: clamp(100px, 70%, 200px); object-fit: cover;" class="pulsing">
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:3000",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Fadel",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "fs": {
+        "scope": [
+          "**",
+          "$APP",
+          "$APP/**",
+          "$CACHE",
+          "$CACHE/**",
+          "$CONFIG",
+          "$CONFIG/**",
+          "$LOG",
+          "$LOG/**",
+          "$HOME/**",
+          "$RESOURCE/**"
+        ]
+      },
+      "clipboard": {
+        "writeText": true,
+        "readText": true
+      },
+      "protocol": {
+        "all": true
+      },
+      "window": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": ["icons/android-chrome-512x512.png"],
+      "identifier": "com.omar-ibrahim.fadel",
+      "longDescription": "Compare images with ease",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 800,
+        "resizable": true,
+        "title": "Fadel - Compare Images",
+        "width": 1200
+      },
+      {
+        "width": 600,
+        "height": 800,
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen"
+      }
+    ]
+  }
+}
